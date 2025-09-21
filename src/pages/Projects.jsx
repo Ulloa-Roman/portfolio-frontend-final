@@ -6,7 +6,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch("http://portfolio-backend-final.onrender.com/api/projects")
       .then((res) => res.json())
       .then((data) => {
         console.log("Respuesta del backend:", data);
