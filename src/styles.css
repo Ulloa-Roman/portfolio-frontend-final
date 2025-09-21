@@ -1,0 +1,296 @@
+/* PALETA Y FUENTE */
+:root {
+  --color-bg-start: #1b0034;      
+  --color-bg-end:   #003459;       
+  --color-surface: rgba(20, 20, 30, 0.55); 
+  --color-primary:  #6f4cff;       
+  --color-primary-light: #8f6fff;
+  --color-text:     #f8f8f8;
+  --color-text-muted: #c7c7d1;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  overflow-x: hidden;
+  background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  z-index: -1;
+}
+
+/* NAV MODERNA */
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  background: rgba(17, 17, 17, 0.55);
+
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+
+  color: #fff;
+  padding: 18px 0;
+  z-index: 1000;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
+.nav a,
+.nav-inner span {
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;                 
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.nav-inner .brand-name {
+  font-size: 1.6rem;              
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 60px;              
+}
+
+.nav a {
+  color: var(--color-text);
+  margin-left: 26px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+
+/*  HERO */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 850px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-text p {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+/* SECCIONES */
+.section {
+  min-height: 100vh;
+  padding: 180px 40px 60px;
+  padding-top: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background 0.6s ease;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 800px;
+  color: var(--color-text-muted);
+}
+
+.sectionContact h1{
+  margin-bottom: 30px;
+}
+
+/* TARJETAS DE PROYECTOS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 80px;
+}
+
+.grid h3{
+  color: rgb(211, 209, 214);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: var(--color-surface);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 300px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+}
+
+/* FORMULARIO */
+.form {
+  background: var(--color-surface);
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.4s ease;
+  margin-bottom: 40px;
+}
+
+.form:hover {
+  transform: translateY(-4px);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: var(--color-primary);
+  background: rgba(255,255,255,0.1);
+  outline: none;
+}
+
+.form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+button {
+  padding: 14px 20px;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+/* ANIMACIONES Y RESPONSIVE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+  .nav-inner {
+    padding: 0 24px;
+  }
+}
+
+
+/* modificaciones para el texto que aparece al pasar el cursor por mi nombre en el inicio*/
+
+.hover-card {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.front-text {
+  display: block;
+  transition: transform 0.4s ease;  
+}
+
+.back-text {
+  position: absolute;
+  top: 100%;                
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Hover: el h1 sube un poco y la descripción aparece */
+.hover-card:hover .front-text {
+  transform: translateY(-20px); 
+}
+
+.hover-card:hover .back-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionProjects h1{
+  margin-bottom: 60px;
+}
