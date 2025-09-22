@@ -1,12 +1,22 @@
-/* PALETA Y FUENTE */
+/* ==== PALETA Y FUENTE ==== */
 :root {
-  --color-bg-start: #1b0034;      
-  --color-bg-end:   #003459;       
-  --color-surface: rgba(20, 20, 30, 0.55); 
-  --color-primary:  #6f4cff;       
+  --color-bg-start: #1b0034;
+  --color-bg-end:   #003459;
+  --color-surface: rgba(20, 20, 30, 0.55);
+  --color-primary:  #6f4cff;
   --color-primary-light: #8f6fff;
   --color-text:     #f8f8f8;
   --color-text-muted: #c7c7d1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
@@ -14,64 +24,47 @@ body {
   margin: 0;
   padding: 0;
   color: var(--color-text);
-  overflow-x: hidden;
   background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  overflow-x: hidden;
   position: relative;
 }
 
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   z-index: -1;
 }
 
-/* NAV MODERNA */
+/* ==== NAV ==== */
 .nav {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-
   background: rgba(17, 17, 17, 0.55);
-
   backdrop-filter: blur(35px);
   -webkit-backdrop-filter: blur(35px);
-
   color: #fff;
   padding: 18px 0;
   z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background 0.3s ease;
 }
-
-
-.nav a,
-.nav-inner span {
-  text-shadow: 0 0 6px rgba(0,0,0,0.4);
-}
-
-
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;                 
   max-width: 1600px;
+  padding: 0 60px;
   margin: 0 auto;
 }
 
-.nav-inner .brand-name {
-  font-size: 1.6rem;              
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-right: 60px;              
-}
-
-.nav a {
+.nav a,
+.nav-inner span {
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
   color: var(--color-text);
   margin-left: 26px;
   text-decoration: none;
@@ -85,17 +78,15 @@ body::before {
   transform: translateY(-3px);
 }
 
-
-/*  HERO */
+/* ==== HERO ==== */
 .hero {
   width: 100%;
   min-height: 100vh;
+  padding: 0 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 60px;
   text-align: center;
-  box-sizing: border-box;
 }
 
 .hero-text {
@@ -104,49 +95,44 @@ body::before {
 }
 
 .hero-text h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .hero-text p {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   line-height: 1.6;
   color: var(--color-text-muted);
-  margin-top: 0.5rem;
 }
 
-/* SECCIONES */
+/* ==== SECCIONES ==== */
 .section {
   min-height: 100vh;
-  padding: 180px 40px 60px;
-  padding-top: 100px;
-  box-sizing: border-box;
+  padding: 100px 20px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  transition: background 0.6s ease;
 }
 
 .section h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
 }
 
 .section p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   max-width: 800px;
   color: var(--color-text-muted);
 }
 
-.sectionContact h1{
+.sectionContact h1 {
   margin-bottom: 30px;
 }
 
-/* TARJETAS DE PROYECTOS */
+/* ==== GRID DE PROYECTOS ==== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -154,11 +140,12 @@ body::before {
   width: 100%;
   max-width: 1200px;
   margin-bottom: 80px;
+  padding: 0 10px;
 }
 
-.grid h3{
+.grid h3 {
   color: rgb(211, 209, 214);
-  font-size: 25px;
+  font-size: 1.25rem;
   margin-bottom: 15px;
 }
 
@@ -168,9 +155,8 @@ body::before {
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.45);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  max-width: 300px; 
   width: 100%;
-  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .card:hover {
@@ -178,7 +164,7 @@ body::before {
   box-shadow: 0 12px 35px rgba(0,0,0,0.55);
 }
 
-/* FORMULARIO */
+/* ==== FORMULARIO ==== */
 .form {
   background: var(--color-surface);
   padding: 45px;
@@ -186,15 +172,10 @@ body::before {
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
   max-width: 520px;
   width: 100%;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  transition: transform 0.4s ease;
-  margin-bottom: 40px;
-}
-
-.form:hover {
-  transform: translateY(-4px);
 }
 
 .form input,
@@ -216,11 +197,6 @@ body::before {
   outline: none;
 }
 
-.form textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-
 button {
   padding: 14px 20px;
   border: none;
@@ -238,24 +214,147 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* ANIMACIONES Y RESPONSIVE */
+/* ==== ANIMACIONES ==== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.4rem;
-  }
+/* --- Ajustes para anchos entre ~1220px y 1024px --- */
+@media (max-width: 1220px) {
   .nav-inner {
-    padding: 0 24px;
+    padding: 0 32px;       /* antes era 60px */
+  }
+  .hero {
+    padding: 0 32px;
+  }
+  .grid {
+    max-width: 100%;       /* elimina tope de 1200px que forzaba el salto */
+    padding: 0 20px;
+    gap: 24px;
+  }
+}
+/* --- Ajuste extra para <=1140px --- */
+@media (max-width: 1140px) {
+  .nav-inner {
+    padding: 0 20px;       /* baja más el padding lateral */
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .grid {
+    max-width: 100%;       /* sin tope */
+    gap: 20px;             /* menos separación entre tarjetas */
+    padding: 0 16px;       /* margen interior más chico */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+/* --- Ajuste para <=1135px --- */
+@media (max-width: 1135px) {
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  /* La grilla pasa a 1 sola columna amplia */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;           /* más espacio vertical entre cards */
+    padding: 0 24px;     /* margen interno lateral */
+    max-width: 600px;    /* centra la columna en pantallas medianas */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card {
+    max-width: 100%;     /* ocupa todo el ancho disponible */
+  }
+}
+
+/* --- Ajuste extra para <=1120px --- */
+@media (max-width: 1120px) {
+  .nav-inner {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 0 16px;
+  }
+
+  /* fuerza a que la grilla pueda caer a 1 sola columna sin romper */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    padding: 0 12px;
+  }
+
+  .card {
+    max-width: 260px; /* un poco más angosta para teléfonos grandes/tablets */
   }
 }
 
 
-/* modificaciones para el texto que aparece al pasar el cursor por mi nombre en el inicio*/
 
+/* ==== MEDIA QUERIES ==== */
+@media (max-width: 1024px) {
+  .nav-inner { padding: 0 40px; }
+}
+
+/* === Ajuste general para tablets y móviles === */
+@media (max-width: 768px) {
+  /* Navegación más compacta */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+  }
+
+  .nav a {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  /* Secciones con menos padding lateral */
+  .section,
+  .hero {
+    padding: 100px 16px 40px;
+  }
+
+  /* Grilla: una sola columna full-width */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 12px;
+    max-width: 100%;
+    margin: 0 auto 60px;
+  }
+
+  /* Cada card ocupa el 100 % y se adapta al ancho del dispositivo */
+  .card {
+    max-width: 100%;
+
+
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 16px; }
+  .nav a { margin-left: 16px; font-size: 1rem; }
+  .hero { padding: 0 16px; }
+  .hero-text p { font-size: 1rem; }
+  .grid { gap: 20px; }
+}
+
+@media (max-width: 360px) {
+  .nav-inner { padding: 0 12px; }
+  .nav a { margin-left: 12px; font-size: 0.9rem; }
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text p { font-size: 0.95rem; }
+}
+
+/* ==== HOVER NOMBRE ==== */
 .hover-card {
   position: relative;
   display: inline-block;
@@ -263,13 +362,12 @@ button:hover {
 }
 
 .front-text {
-  display: block;
-  transition: transform 0.4s ease;  
+  transition: transform 0.4s ease;
 }
 
 .back-text {
   position: absolute;
-  top: 100%;                
+  top: 100%;
   left: 0;
   width: 100%;
   opacity: 0;
@@ -281,16 +379,9 @@ button:hover {
   text-align: center;
 }
 
-/* Hover: el h1 sube un poco y la descripción aparece */
-.hover-card:hover .front-text {
-  transform: translateY(-20px); 
-}
+.hover-card:hover .front-text { transform: translateY(-20px); }
+.hover-card:hover .back-text { opacity: 1; transform: translateY(0); }
 
-.hover-card:hover .back-text {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.sectionProjects h1{
-  margin-bottom: 60px;
+.sectionProjects h1 { margin-bottom: 60px; }
+  }
 }
