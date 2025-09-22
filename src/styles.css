@@ -34,15 +34,6 @@ meta[name="viewport"] {
   content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  z-index: -1;
-}
-
 /* ==== NAV ==== */
 .nav {
   position: fixed;
@@ -59,19 +50,20 @@ body::before {
 
 .nav-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* centrado general */
   align-items: center;
   max-width: 1600px;
   padding: 0 40px;
   margin: 0 auto;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .nav a,
 .nav-inner span {
   text-shadow: 0 0 6px rgba(0,0,0,0.4);
   color: var(--color-text);
-  margin-left: 20px;
+  margin: 0 10px; /* reduce margen para centrar */
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -118,6 +110,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* centra verticalmente */
   text-align: center;
 }
 
@@ -131,6 +124,7 @@ body::before {
   line-height: 1.7;
   max-width: 800px;
   color: var(--color-text-muted);
+  text-align: center;
 }
 
 /* ==== GRID DE PROYECTOS ==== */
@@ -142,6 +136,14 @@ body::before {
   max-width: 1200px;
   margin-bottom: 80px;
   padding: 0 20px;
+  justify-items: center; /* centra las cards */
+}
+
+.grid h3 {
+  color: #f0f0f0; /* más visible que antes */
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .card {
@@ -151,6 +153,7 @@ body::before {
   box-shadow: 0 8px 30px rgba(0,0,0,0.45);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   width: 100%;
+  max-width: 300px;
 }
 
 .card:hover {
@@ -250,6 +253,7 @@ button:hover {
 
 .sectionProjects h1 {
   margin-bottom: 60px;
+  color: #f0f0f0; /* más visible */
 }
 
 /* ==== MEDIA QUERIES ==== */
@@ -260,7 +264,8 @@ button:hover {
 @media (max-width: 768px) {
   .nav-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* nombre centrado */
+    text-align: center;
   }
   .nav a {
     margin: 8px 0;
@@ -276,6 +281,7 @@ button:hover {
     padding: 0 12px;
     max-width: 100%;
     margin: 0 auto 60px;
+    justify-items: center; /* centrado en móvil */
   }
   .card { max-width: 100%; }
 }
