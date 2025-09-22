@@ -10,7 +10,7 @@ export default function Contact(){
   e.preventDefault();
   setStatus('Enviando...');
   try {
-    const res = await fetch('https://portfolio-backend-final-nepn.onrender.com/api/contact', {
+    const res = await fetch('https://portfolio-backend-final-nepn.onrender.com/api/contact/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
