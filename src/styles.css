@@ -29,7 +29,7 @@ body {
   position: relative;
 }
 
-/* ==== BLOQUEAR ZOOM EN MÓVILES ==== */
+
 meta[name="viewport"] {
   content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
 }
@@ -50,7 +50,7 @@ meta[name="viewport"] {
 
 .nav-inner {
   display: flex;
-  justify-content: center; /* centrado general */
+  justify-content: center; 
   align-items: center;
   max-width: 1600px;
   padding: 0 40px;
@@ -63,7 +63,7 @@ meta[name="viewport"] {
 .nav-inner span {
   text-shadow: 0 0 6px rgba(0,0,0,0.4);
   color: var(--color-text);
-  margin: 0 10px; /* reduce margen para centrar */
+  margin: 0 10px; 
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -110,7 +110,7 @@ meta[name="viewport"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centra verticalmente */
+  justify-content: center;
   text-align: center;
 }
 
@@ -136,11 +136,11 @@ meta[name="viewport"] {
   max-width: 1200px;
   margin-bottom: 80px;
   padding: 0 20px;
-  justify-items: center; /* centra las cards */
+  justify-items: center;
 }
 
 .grid h3 {
-  color: #f0f0f0; /* más visible que antes */
+  color: #f0f0f0; 
   font-size: 1.25rem;
   margin-bottom: 15px;
   text-align: center;
@@ -253,7 +253,7 @@ button:hover {
 
 .sectionProjects h1 {
   margin-bottom: 60px;
-  color: #f0f0f0; /* más visible */
+  color: #f0f0f0; 
 }
 
 /* ==== MEDIA QUERIES ==== */
@@ -264,7 +264,7 @@ button:hover {
 @media (max-width: 768px) {
   .nav-inner {
     flex-direction: column;
-    align-items: center; /* nombre centrado */
+    align-items: center; 
     text-align: center;
   }
   .nav a {
@@ -281,7 +281,7 @@ button:hover {
     padding: 0 12px;
     max-width: 100%;
     margin: 0 auto 60px;
-    justify-items: center; /* centrado en móvil */
+    justify-items: center; 
   }
   .card { max-width: 100%; }
 }
